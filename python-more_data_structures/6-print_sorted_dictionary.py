@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python37-update_dictionary.py
 def print_sorted_dictionary(a_dictionary):
     keys = list(a_dictionary.keys())
     keys.sort()
