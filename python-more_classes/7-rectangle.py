@@ -79,4 +79,3 @@ class Rectangle:
         """Called when instance is deleted"""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
-8-rectangle.py
