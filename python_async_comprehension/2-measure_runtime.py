@@ -1,34 +1,25 @@
 #!/usr/bin/env python3
-"""
-Create a measure_time function with integers n
-and max_delay as arguments that measures the total
- execution time for wait_n(n, max_delay), and returns
- total_time / n.
-"""
-
+"""Measure runtime of parallel async comprehensions."""
 
 import asyncio
 import time
 
-wait_n = __import__('1-concurrent_coroutines').wait_n
+async_comprehension = __import__(
+    "1-async_comprehension"
+).async_comprehension
 
 
-def measure_time(n: int, max_delay: int = 0) -> float:
-    """
-    Create a measure_time function with integers n and max_delay as
-    arguments that measures the total execution time for
-     wait_n(n, max_delay)
+async def measure_runtime() -> float:
+    """Execute async_comprehension four times in parallel."""
+    start = time.perf_counter()
 
-    Args:
-    n: int
-    max_delay: int = 10
+    await asyncio.gather(
+        async_comprehension(),
+        async_comprehension(),
+        async_comprehension(),
+        async_comprehension(),
+    )
 
-    Returns:
-    total_time / n
-    """
-    start_time = time.time()
-    asyncio.run(wait_n(n, max_delay))
-    end_time = time.time()
-    total_time = end_time - start_time
+    end = time.perf_counter()
 
-    return total_time / n
+    return end - start
