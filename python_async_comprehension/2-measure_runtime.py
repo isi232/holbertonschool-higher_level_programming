@@ -9,7 +9,7 @@ async_comprehension = __import__(
 ).async_comprehension
 
 
-async def measure_runtime() -> float:
+async def measure_runtime() -> List[float]:
     """Execute async_comprehension four times in parallel."""
     start = time.perf_counter()
 
