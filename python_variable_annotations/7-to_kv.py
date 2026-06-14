@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Module that provides a type-annotated function to sum a mixed list."""
-from typing import List, Union
+"""Module that provides a type-annotated function."""
+
+from typing import Tuple, Union
 
 
-def sum_mixed_list(mxd_lst: List[Union[int, float]]) -> float:
-    """Return the sum of a list of integers and floats as a float."""
-    return float(sum(mxd_lst))
+def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
+    """Return a tuple containing the string and the square of v as a float."""
+    return (k, float(v ** 2))
