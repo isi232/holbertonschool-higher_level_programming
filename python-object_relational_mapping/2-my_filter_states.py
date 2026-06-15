@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-Script that takes in an argument and displays all values
-in the states table of
-"""
+"""Filter states by name."""
 
 import MySQLdb
 import sys
@@ -18,7 +15,11 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
 
-    query = "SELECT * FROM states WHERE name = BINARY '{}' ORDER BY id ASC".format(sys.argv[4])
+    query = (
+        "SELECT * FROM states WHERE name = BINARY '{}' "
+        "ORDER BY id ASC"
+    ).format(sys.argv[4])
+
     cursor.execute(query)
 
     for row in cursor.fetchall():
