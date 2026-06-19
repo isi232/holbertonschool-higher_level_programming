@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-task_02_jinja.py
+task_02_logic.py
 
 Extends the basic Flask application with a dynamic /items route that
 reads a list of items from a JSON file and renders them using Jinja's
