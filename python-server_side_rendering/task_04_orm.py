@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-task_04_orm.py
+task_04_db.py
 
 Extends the Flask application's /products route to support a third
 data source, 'sql', which reads product data from a SQLite database
